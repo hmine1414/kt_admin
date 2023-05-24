@@ -129,8 +129,10 @@ input[type="checkbox"]:checked + label:after {content:''; width:22px; height:22p
 .txtbox {display:block; position:relative; width:100%; min-height:80px; overflow:hidden; background:#fff; border:1px solid #e6e9f2; border-radius:5px; vertical-align:middle}
 .txtbox textarea {width:100%; height:100%; padding:10px; border:0}
 
-.codebox {display:block; position:relative; width:100%; min-height:40px; overflow:hidden; background:#fff; border:1px solid #e6e9f2; border-radius:5px; vertical-align:middle}
+.codebox {display:block; position:relative; width:100%; min-height:40px; overflow:hidden; background:#fff; vertical-align:middle}
 .codebox textarea {width:100%; height:100%; padding:10px; border:0}
+.codebox code {display:block; width:100%; height:100%; padding:10px; border:0}
+.codebox pre {display:block; width:100%; height:100%; padding:10px; border:0}
 
 
 .inpbox {position:relative; height:40px; overflow:hidden; display:flex; align-items:center; justify-content:center}
@@ -149,7 +151,7 @@ p.inpbox {width:100%}
 .optionbox select:focus {-webkit-transition:all 0.30s ease-in-out;-moz-transition:all 0.30s ease-in-out;-ms-transition:all 0.30s ease-in-out;-o-transition:all 0.30s ease-in-out}
 .optionbox select:focus {-webkit-box-shadow:0 0 6px rgba(0,0,0,0.1); -moz-box-shadow:0 0 6px rgba(0,0,0,0.1); box-shadow:0 0 6px rgba(0,0,0,0.1); border:1px solid #00a2bb !important}
 
-.datebox {display:block; float:left; position:relative; width:180px; height:40px; padding:0 45px 0 0; background:#fff; border:1px solid #e6e9f2; border-radius:5px}
+.datebox {display:block; float:left; position:relative; width:180px; height:40px; overflow:hidden; padding:0 45px 0 0; background:#fff; border:1px solid #e6e9f2; border-radius:5px}
 .datebox + em {float:left; margin:0 5px; color:#4b5063; font-size:14px; line-height:40px}
 .datebox img {position:absolute; right:8px; top:11px}
 .datebox input {width:100%; height:38px; padding:0 10px; text-align:center; border:0; font-size:14px; color:#4b5063}
@@ -157,8 +159,6 @@ p.inpbox {width:100%}
 .datebox input:-moz-placeholder {color:#bcc0cc; font-size:16px}
 .datebox input::-moz-placeholder{color:#bcc0cc; font-size:16px}
 .datebox input:-ms-input-placeholder {color:#bcc0cc; font-size:16px}
-.datebox input:focus {-webkit-transition:all 0.30s ease-in-out;-moz-transition:all 0.30s ease-in-out;-ms-transition:all 0.30s ease-in-out;-o-transition:all 0.30s ease-in-out}
-.datebox input:focus {-webkit-box-shadow:0 0 6px rgba(0,0,0,0.1); -moz-box-shadow:0 0 6px rgba(0,0,0,0.1); box-shadow:0 0 6px rgba(0,0,0,0.1); border:1px solid #00a2bb !important}
 
 .attachmentbox {position:relative; width:100%; height:58px; padding:0 120px 0 0}
 .attachmentbox.deltype {padding-right:240px}
