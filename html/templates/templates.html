@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="description" content="KT 인터넷 속도 측정 관리 시스템">
+<meta name="keywords" content="KT 인터넷 속도 측정 관리 시스템">
+<title>템플릿 | KT 인터넷 속도 측정 관리 시스템</title>
+<link rel="icon" type="image/png" href="../../resources/images/favicon.png">
+<link rel="stylesheet" type="text/css" href="../../resources/css/reset.css">
+<script src="../../resources/js/jquery-1.11.2.min.js"></script>
+<script src="../../resources/js/jquery_ui.js"></script>
+</head>
+
+<body>
+
+<div id="wrap">	
+	
+	<div class="section-wrap">
+		<!-- S: section--lnb -->
+		<div class="section--lnb">
+			<button type="button" class="btn-lnb-toggle" onclick="front.lnbToggle()" title="메뉴 닫힘">닫힘</button>
+			<div class="fixed-menu">
+				<span class="kt-logo" onclick="location.href='../monitoring/index.html'">KT</span>
+				<ul>
+					<li class="on"><a href="javascript: front.lnbMenuActive(0)" title="실시간 모니터링">실시간 모니터링</a></li> <!-- active class="on" -->
+					<li><a href="javascript: front.lnbMenuActive(1)" title="서비스 현황">서비스 현황</a></li>
+					<li><a href="javascript: front.lnbMenuActive(2)" title="서비스 추이">서비스 추이</a></li>
+					<li><a href="javascript: front.lnbMenuActive(3)" title="관리자 기능">관리자 기능</a></li>
+				</ul>
+			</div>
+			<div class="lnb-submenu">
+				<div class="kt-title" onclick="location.href='../monitoring/index.html'"><strong>인터넷 속도측정 관리 시스템</strong></div>
+				<ul>
+					<li class="on"> <!-- active class="on" -->
+						<div>
+							<strong>실시간 모니터링</strong>
+							<ul>
+								<li class="on"><a href="../monitoring/index.html">실시간 추이</a></li> <!-- active class="on" -->
+								<li><a href="../monitoring/index.html">미정</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>서비스 현황</strong>
+							<ul>
+								<li><a href="../status/index.html">서비스 현황 조회</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>서비스 추이</strong>
+							<ul>
+								<li><a href="../transition/index.html">일 조회</a></li>
+								<li><a href="../transition/index.html">월 조회</a></li>
+								<li><a href="../transition/index.html">년 조회</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>관리자 기능</strong>
+							<ul>
+								<li><a href="../administrator/index.html">권한 승인</a></li>
+								<li><a href="../administrator/index.html">사용자 관리</a></li>
+								<li><a href="../administrator/index.html">접속 이력조회</a></li>
+								<li><a href="../administrator/index.html">마스킹해제 이력조회</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--//E: section--lnb -->
+
+		<!-- S: section--container -->
+		<div class="section--container">		
+			<div class="profile-position">
+				<span class="first-name">홍</span>
+				<p><strong>홍길동</strong><em>총괄관리자</em></p>
+				<button type="button" class="btn-logout" title="로그아웃">로그아웃</button>
+			</div>
+			<div class="section--contents">
+				<ul class="page-navi">
+					<li><strong>templates</strong></li>
+				</ul>
+				<div class="page-contents">
+					<div class="search-pannel">
+						<fieldset>
+							<legend>서비스 현황 조회 검색폼</legend>
+							<div class="form-group single">
+								<span class="inpbox" style="width:180px"><input type="text" value=""></span>
+								<div class="codebox" style="width:600px">
+									<textarea readonly>
+<span class="inpbox" style="width:180px"><input type="text" value=""></span>
+									</textarea>
+								</div>
+							</div>
+							<div class="form-group single">
+								<span class="datebox"><input type="text" value=""></span>
+								<div class="codebox" style="width:600px">
+									<textarea readonly>
+<span class="datebox"><input type="text" value=""></span>
+									</textarea>
+								</div>
+							</div>
+							<div class="form-group single">
+								<button type="button" class="btn-green btn-large">확인</button>
+								<div class="codebox" style="width:600px">
+									<textarea readonly>
+<button type="button" class="btn-green btn-large">확인</button>
+									</textarea>
+								</div>
+							</div>
+							<div class="form-group single">
+								<button type="button" class="btn-green btn-medium round">확인</button>
+								<div class="codebox" style="width:600px">
+									<textarea readonly>
+<button type="button" class="btn-green btn-medium round">확인</button>
+									</textarea>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!--//E: section--container -->
+	</div>
+</div>
+
+<script src="../../resources/js/front_ui.js"></script>
+<script>
+
+</script>
+</body>
+</html>
