@@ -54,9 +54,9 @@
 						<div>
 							<strong>서비스 추이</strong>
 							<ul>
-								<li><a href="../transition/index.html">일 조회</a></li>
-								<li><a href="../transition/index.html">월 조회</a></li>
-								<li><a href="../transition/index.html">년 조회</a></li>
+								<li><a href="../transition/search_daily.html">일 조회</a></li>
+								<li><a href="../transition/search_monthly.html">월 조회</a></li>
+								<li><a href="../transition/search_year.html">년 조회</a></li>
 							</ul>
 						</div>
 					</li>
@@ -91,38 +91,156 @@
 					<div class="search-pannel">
 						<fieldset>
 							<legend>서비스 현황 조회 검색폼</legend>
-							<div class="form-group single">
-								<span class="inpbox" style="width:180px"><input type="text" value=""></span>
-								<div class="codebox" style="width:600px">
-									<textarea readonly disabled>
-<span class="inpbox" style="width:180px"><input type="text" value=""></span>
-									</textarea>
-								</div>
-							</div>
-							<!-- div class="form-group single">
-								<span class="datebox"><input type="text" value=""></span>
-								<div class="codebox" style="width:600px">
-									<textarea readonly disabled>
+							<ul class="templates-form">
+								<li>
+									<div class="form-group single">
+										<label>달력</label>
+										<div>
+											<span class="datebox"><input type="text" value=""></span>
+											<span class="datebox"><input type="text" value=""></span>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
 <span class="datebox"><input type="text" value=""></span>
-									</textarea>
-								</div>
-							</div -->
-							<div class="form-group single">
-								<button type="button" class="btn-green btn-large">확인</button>
-								<div class="codebox" style="width:600px">
-									<textarea readonly disabled>
-<button type="button" class="btn-green btn-large">확인</button>
-									</textarea>
-								</div>
-							</div>
-							<div class="form-group single">
-								<button type="button" class="btn-green btn-medium round">확인</button>
-								<div class="codebox" style="width:600px">
-									<textarea readonly disabled>
-<button type="button" class="btn-green btn-medium round">확인</button>
-									</textarea>
-								</div>
-							</div>
+<span class="datebox"><input type="text" value=""></span></textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>selectbox</label>
+										<div>
+											<span class="optionbox" style="width:200px"><select><option>선택</option></select></span>
+											<p class="optionbox"><select><option>선택</option></select></p>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<span class="optionbox" style="width:200px"><select><option>선택</option><option>혜화서버#1</option><option>혜화서버#2</option></select></span>
+<p class="optionbox"><select><option>선택</option></select></p></textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>input text</label>
+										<div>
+											<span class="inpbox" style="width:280px"><input type="text" placeholder="span 태그 사용시 가로값 지정, 기본값 100px"></span>					
+											<p class="inpbox"><input type="text" placeholder="p 태그 사용시 자동으로 가로값 100%"></p>					
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<span class="inpbox" style="width:280px"><input type="text" placeholder="span 태그 사용시 가로값 지정, 기본값 100px"></span>					
+<p class="inpbox"><input type="text" placeholder="p 태그 사용시 자동으로 가로값 100%"></p>	</textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>normal input check</label>
+										<div>
+											<span class="ml20"><input type="checkbox" name="measureType" id="measure-100m" checked><label for="measure-100m">100M</label></span>
+											<span class="ml20"><input type="checkbox" name="measureType" id="measure-1g"><label for="measure-1g">1G</label></span>
+											<span class="ml20"><input type="checkbox" name="measureType" id="measure-10g"><label for="measure-10g">10G</label></span>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<span class="ml20"><input type="checkbox" name="measureType" id="measure-100m" checked><label for="measure-100m">100M</label></span>
+<span class="ml20"><input type="checkbox" name="measureType" id="measure-1g"><label for="measure-1g">1G</label></span>
+<span class="ml20"><input type="checkbox" name="measureType" id="measure-10g"><label for="measure-10g">10G</label></span></textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>normal input radio</label>
+										<div>
+											<span class="ml20"><input type="radio" name="radioName" id="radio-1" checked><label for="radio-1">Radio 1</label></span>
+											<span class="ml20"><input type="radio" name="radioName" id="radio-2"><label for="radio-3">Radio 2</label></span>
+											<span class="ml20"><input type="radio" name="radioName" id="radio-3"><label for="radio-2">Radio 3</label></span>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<span class="ml20"><input type="radio" name="radioName" id="radio-1" checked><label for="radio-1">Radio 1</label></span>
+<span class="ml20"><input type="radio" name="radioName" id="radio-2"><label for="radio-3">Radio 2</label></span>
+<span class="ml20"><input type="radio" name="radioName" id="radio-3"><label for="radio-2">Radio 3</label></span></textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>tab style checkbox</label>
+										<div>
+											<ul class="chk-btn">
+												<li><input type="checkbox" name="measureType1" id="measure1-100m" checked><label for="measure1-100m">100M</label></li>
+												<li><input type="checkbox" name="measureType1" id="measure1-1g"><label for="measure1-1g">1G</label></li>
+												<li><input type="checkbox" name="measureType1" id="measure1-10g"><label for="measure1-10g">10G</label></li>
+											</ul>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<ul class="chk-btn">
+	<li><input type="checkbox" name="measureType1" id="measure1-100m" checked><label for="measure1-100m">100M</label></li>
+	<li><input type="checkbox" name="measureType1" id="measure1-1g"><label for="measure1-1g">1G</label></li>
+	<li><input type="checkbox" name="measureType1" id="measure1-10g"><label for="measure1-10g">10G</label></li>
+</ul></textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>textarea</label>
+										<div>
+											<p class="txtbox" style="width:100%"><textarea cols="10" rows="3"></textarea></p>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<p class="txtbox" style="width:100%"><textarea cols="10" rows="3"></textarea></p></textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>btn-small</label>
+										<div>
+											<button type="button" class="btn-green btn-small">.btn-small .btn-small</button>
+											<button type="button" class="btn-gray btn-small round">.btn-gray .btn-small .round</button>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<button type="button" class="btn-green btn-small">.btn-green .btn-small</button>
+<button type="button" class="btn-gray btn-small round">.btn-gray .btn-small .round</button></textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>btn-medium</label>
+										<div>
+											<button type="button" class="btn-green btn-medium">.btn-green .btn-medium</button>
+											<button type="button" class="btn-gray btn-medium round">.btn-gray .btn-medium .round</button>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<button type="button" class="btn-green btn-medium">.btn-green .btn-medium</button>
+<button type="button" class="btn-gray btn-medium round">.btn-gray .btn-medium .round</button></textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>btn-large</label>
+										<div>
+											<button type="button" class="btn-green btn-large">.btn-green .btn-large</button>
+											<button type="button" class="btn-gray btn-large round">.btn-gray .btn-large .round</button>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<button type="button" class="btn-green btn-large">.btn-green .btn-large</button>
+<button type="button" class="btn-gray btn-large round">.btn-gray .btn-large .round</button></textarea>
+									</div>
+								</li>
+							</ul>
 						</fieldset>
 					</div>
 				</div>

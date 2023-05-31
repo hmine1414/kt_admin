@@ -112,6 +112,15 @@ frontUI.prototype = {
 			activeSubmenu.removeClass("on");
 		}
 	},
+	searchToggle(){
+		if ($(".search-pannel").is(".toggle-close")){
+			$(".search-pannel").removeClass("toggle-close").addClass("toggle-open");
+			$(".search-pannel .btn-search-toggle em").text("접기");
+		}else{
+			$(".search-pannel").removeClass("toggle-open").addClass("toggle-close");
+			$(".search-pannel .btn-search-toggle em").text("상세조회");
+		}
+	},
 	modalView: function(modalName, parentModal) {
 		var me = this;
 		var modalEl = $("."+modalName);

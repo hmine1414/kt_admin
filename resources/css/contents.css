@@ -11,13 +11,75 @@
 .loginbox fieldset > div.pw-insert input[type='password'] {padding:0 10px 0 42px; background:#fff url('../images/bg_login_pw.png') no-repeat 15px 50%}
 .loginbox .inpbox, .loginbox .inpbox {height:68px}
 .loginbox .inpbox input[type="text"], .loginbox .inpbox input[type="password"] {width:calc(100% - 20px); height:calc(100% - 20px); padding:0 10px; border:1px solid #e5e8f1; border-radius:6px; background:#fff; font-size:16px; color:#20242c}
-.loginbox .inpbox input[type="text"]:focus, .loginbox .inpbox input[type="password"]:focus {-webkit-transition:all 0.30s ease-in-out;-moz-transition:all 0.30s ease-in-out;-ms-transition:all 0.30s ease-in-out;-o-transition:all 0.30s ease-in-out}
+.loginbox .inpbox input[type="text"]:focus, .loginbox .inpbox input[type="password"]:focus {-webkit-transition:all 0.30s ease-in-out;-moz-transition:all 0.30s ease-in-out; -o-transition:all 0.30s ease-in-out}
 .loginbox .inpbox input[type="text"]:focus, .loginbox .inpbox input[type="password"]:focus {-webkit-box-shadow:0 0 10px 1px rgba(0,0,0,0.08); -moz-box-shadow:0 0 10px 1px rgba(0,0,0,0.08); box-shadow:0 0 10px 1px rgba(0,0,0,0.08); border:1px solid #00a2bb !important}
 
-.search-pannel {min-height:190px; display:flex; align-items:center; justify-content:center; flex-direction:colum; padding:19px 0; background:#fff; border:1px solid #e6e9f2; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.05)}
+ul.tabbox {position:relative; width:100%; height:50px; display:flex; align-items:center; justify-content:center}
+ul.tabbox::after {position:absolute; left:0; bottom:0; z-index:-1; width:100%; height:1px; background:#e4e6f0; content:''}
+ul.tabbox li {height:50px; margin:0 23px}
+ul.tabbox li a {display:block; position:relative; height:100%; color:#9a9fb2; font-size:22px; font-weight:700}
+ul.tabbox li a::after {position:absolute; left:0; bottom:0; width:0; height:2px; background:transparent; transition:width 0.3s; content:''}
+ul.tabbox li a:hover::after {width:100%; background:#00a2bb}
+ul.tabbox li a:hover {color:#00a2bb}
+ul.tabbox li.on a::after {width:100%; background:#00a2bb}
+ul.tabbox li.on a {color:#00a2bb}
 
-.form-group.single {display:flex; align-items:center; justify-content:center; margin:10px 0 0 0}
+.tabcontents {margin-top:30px}
+
+.search-pannel {position:relative; min-height:190px; display:flex; align-items:center; justify-content:center; flex-direction:column; overflow:hidden; margin-bottom:36px; padding:0 0 29px 0; background:#fff; border:1px solid #e6e9f2; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.05)}
+.search-pannel.toggle-close {min-height:150px; padding-bottom:70px}
+.search-pannel.toggle-close fieldset > ul {overflow:hidden; height:0; min-height:0; pointer-events:none; opacity:0; transition:all 0.5s}
+.search-pannel.toggle-open {min-height:150px; padding-bottom:70px}
+.search-pannel.toggle-open fieldset > ul {overflow:visible; height:205px; pointer-events:auto; opacity:1; transition:all 0.5s}
+.search-pannel.toggle-open .btn-search-toggle button em::after {transform:rotate(180deg)}
+
+.search-pannel .btncenter {position:relative; z-index:11}
+.search-pannel .btn-search-toggle {position:absolute; left:0; bottom:0; display:block; width:100%; height:39px; border-radius:0 0 10px 10px; border-top:1px solid #e6e9f2}
+.search-pannel .btn-search-toggle button {display:block; width:100%; height:38px; background:#fafafc}
+.search-pannel .btn-search-toggle button em {display:inline-block; position:relative; height:15px; padding:0 15px 0 0; color:#00a4bd; font-size:14px; line-height:15px}
+.search-pannel .btn-search-toggle button em::after {position:absolute; right:0; top:5px; width:9px; height:5px; background:url('../images/icon_sch_collapse.png') no-repeat 0 0; transform:rotate(0deg); transition:transform 0.5s; color:#00a4bd; content:''}
+.search-pannel fieldset {width:100%; max-width:1440px}
+.search-pannel fieldset > ul {width:100%; min-height:65px; margin:0 auto 0; padding-bottom:29px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap}
+.search-pannel fieldset > ul > li {width:calc(100% / 7); margin:20px 32px 0 20px}
+.search-pannel fieldset > ul > li.date {width:390px}
+.search-pannel fieldset > ul.templates-form {width:100%; flex-direction:column}
+.search-pannel fieldset > ul.templates-form > li {display:flex; align-items:center; justify-content:space-between; width:100%; min-height:93px; margin:0; padding:6px 0; border-top:1px solid #ddd}
+.search-pannel fieldset > ul.templates-form > li .form-group.single {width:100%; max-width:400px}
+.search-pannel fieldset > ul.templates-form > li .form-group.single > label + div {width:100%}
+.search-pannel fieldset > ul.templates-form > li .form-group.single > div button + button {display:block; margin-top:6px}
+.search-pannel fieldset > ul.templates-form > li .form-group.single > div .optionbox + .optionbox {margin-top:6px}
+.search-pannel fieldset > ul.templates-form > li .form-group.single > div ul.chk-btn {float:left}
+.search-pannel fieldset > ul.templates-form > li .codebox {width:calc(100% - 420px)}
+.search-pannel fieldset > ul.templates-form > li .txtbox {min-height:53px}
+
+.search-result-pannel {}
+
+.border-header-info {width:100%; height:40px; margin-bottom:10px; display:flex; align-items:center; justify-content:space-between}
+.border-header-info .during-date p span {display:inline-block; line-height:18px}
+.border-header-info .during-date p span + span::before {content:' ~ '}
+.border-header-info .during-date p::before {content:'조회기간'}
+.border-header-info .during-date p span:first-child {position:relative; padding:0 0 0 9px; margin:0 0 0 10px}
+.border-header-info .during-date p span:first-child::before {position:absolute; left:0; top:50%; width:1px; height:10px; margin-top:-5px; background:#bac0cf; content:''}
+.border-header-info .sort-view {display:flex; align-items:center; justify-content:center}
+.border-header-info .sort-view strong em {margin-left:3px; font-weight:700; color:#00a2bb}
+.border-header-info .sort-view .optionbox {margin-left:12px}
+
+.boardlist {width:100%}
+.boardlist table {width:100%; table-layout:fixed; border-top:1px solid #bac0cf}
+.boardlist table thead th {padding:18px 0; background:#f5f6fa; bottom:1px solid #eceef5; color:#6c758b; font-size:14px}
+.boardlist table thead th > b {display:inline-block; height:13px; line-height:13px}
+.boardlist table thead th > .btn-sort {display:inline-block; position:relative; width:6px; height:12px; margin-left:3px}
+.boardlist table thead th > .btn-sort button {position:absolute; left:0; width:6px; height:6px; font-size:0; text-indent:-99999px}
+.boardlist table thead th > .btn-sort .btn-sort-asc {top:0; background:url('../images/icon_sort_top.png') no-repeat 50% 0}
+.boardlist table thead th > .btn-sort .btn-sort-desc {bottom:0; background:url('../images/icon_sort_bottom.png') no-repeat 50% 100%}
+.boardlist table tbody td {padding:10px 0; text-align:center; border-bottom:1px solid #f2f3f7; color:#000}
+.boardlist table tbody td.txtleft {line-height:17px}
+
+.form-group.single {display:flex; align-items:flex-start; justify-content:flex-start; flex-direction:column; margin:10px 0 0 0}
 .form-group.single:first-child {margin-top:0}
+.form-group.single > label {color:#101216; font-weight:700}
+.form-group.single > label + div {width:100%; margin-top:7px}
+.form-group.single > label + div .ml20:first-child {margin-left:0 !important}
 .form-group.single .codebox {margin-left:10px}
 
 

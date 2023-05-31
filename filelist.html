@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>KT속도측정 관리자 파일리스트</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="resources/images/favicon.png"/>
+<style type="text/css">
+* {margin:0; padding:0}
+html, body {color:#6773a9; font-size:12px; font-family:Arial, Dotum}
+.boardbox {width:95%; max-width:940px; margin:2% auto}
+table {width:100%; padding:0; table-layout:fixed; font-family:Arial, Dotum}
+table.tbl {border:4px solid #7ae5e5}
+table tr {background:#fff}
+table th {padding:7px 0 5px 0; color:#000; font-size:12px; text-align:center}
+table td {color:#919191; font-size:1px; text-align:center; font-family:Arial, Dotum; word-wrap:break-word; word-break:break-all}
+table tr.blank td {padding:1px 0 0 0; background:#efefef}
+table tr.mj td {color:#c00000; font-weight:bold}
+table tr.mj td a {color:#c00000; font-weight:bold}
+table td.depthTitle {padding:3px 0 2px 0; color:#222; font-weight:bold; font-size:12px; text-align:center; letter-spacing:-1px; font-family:Arial, Dotum}
+table td.end {color:#6773a9; background:#efefef}
+table td.edit {color:#6773a9; background:#bbe7e8}
+table td.etc {padding:3px 5px 2px 5px; color:#333; text-align:left; font-size:12px; background:#fff}
+table td.secDepth {padding:3px 5px 2px 5px; text-align:center; font-size:12px; color:#666; line-height:150%}
+table td.thDepth {padding:3px 5px 2px 5px; text-align:left; font-size:12px; color:#b1b1b1; line-height:150%}
+table td.frDepth {padding:3px 5px 2px 5px; text-align:left; font-size:12px; color:#b1b1b1; line-height:150%}
+table td.date {padding:4px 0 2px 0; text-align:center; font-size:12px}
+table td.link {padding:4px 0 2px 10px; text-align:left; font-size:12px}
+table td h1 {padding:18px 0 15px 0; color:#000; font-size:16px; text-align:center; font-family:Arial}
+div.styleDot {width:100%; font-size:1px; border-top:10px dotted #efefef; border-bottom:10px dotted #efefef}
+div.styleDot_02 {width:100%; margin:20px 0 0 0; font-size:5px; border-top:10px dashed #7edfd9; border-bottom:10px dashed #7edfd9}
+div.styleDot_03 {width:100%; margin:5px 0 0 0; font-size:5px; border-top:10px dashed #efefef; border-bottom:10px dashed #f7f7f7}
+div.codingconfirm {width:99%; height:20px; text-align:right; font-size:12px}
+div.codingconfirm span {color:#e5e5e5}
+p.pageLink	{margin:20px 0 10px 0; color:#eda725; font-size:12px}
+a {color:#838383; text-decoration:none}
+a:hover {color:#919191; text-decoration:underline}
+.author {width:998px; padding:5px 2px 0 0; text-align:right; font-family:tahoma}
+.notice {padding:10px; text-align:left; background:#f9f9f9; font-size:13px; color:#666}
+
+@media screen and (max-width:940px) {
+	.boardbox	{max-width:940px}
+}
+
+@media screen and (min-width:200px) and (max-width:440px) {
+	.boardbox	{width:100%; max-width:360px; min-width:320px}
+	table td.date {font-size:11px}
+	table td.etc {font-size:11px}
+	table td.secDepth {font-size:11px}
+	table td.thDepth {font-size:11px}
+}
+</style>
+</head>
+<body>
+<div class="boardbox">
+	<table width="1000" border="0" cellpadding="6" cellspacing="1" bgcolor="#dedcdc" class="tbl">
+		<colgroup>
+			<col width="22%" />
+			<col width="22%" />
+			<col width="22%" />
+			<col width="*" />
+		</colgroup>
+		<tr>
+			<td colspan="4"><h1>[ KT속도측정 관리자 파일리스트 ]</h1></td>
+		</tr>
+		<tr>
+			<th>1 Depth</th>
+			<th>2 Depth</th>
+			<th>link</th>
+			<th>modify history / etc</th>
+		</tr>
+		<tr>
+			<td class="depthTitle" colspan="2">LOGIN</td>
+			<td class="link end">[ <a href="html/login.html" target="_blank">login.html</a> ]</td>
+			<td class="etc">완료</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="depthTitle" colspan="2">TEMPLATES</td>
+			<td class="link">[ <a href="html/templates/templates.html" target="_blank">templates.html</a> ]</td>
+			<td class="etc">지속적 업데이트 예정</td>
+		</tr> 
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="depthTitle" rowspan="2">서비스 현황</td>
+			<td class="secDepth">서비스 현황 조회</td>
+			<td class="link end">[ <a href="html/status/index.html" target="_blank">index.html</a> ]</td>
+			<td class="etc">완료</td>
+		</tr>
+		<tr>
+			<td class="secDepth">검색영역 접힘/펼침</td>
+			<td class="link end">[ <a href="html/status/search_toggle.html" target="_blank">search_toggle.html</a> ]</td>
+			<td class="etc">완료</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>	
+		</tr>
+		<tr>
+			<td class="depthTitle">실시간 모니터링</td>
+			<td class="secDepth">실시간 추이</td>
+			<td class="link">[ <a href="html/monitoring/index.html" target="_blank">index.html</a> ]</td>
+			<td class="etc"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="depthTitle" rowspan="3">서비스 추이</td>
+			<td class="secDepth">일 조회</td>
+			<td class="link">[ <a href="html/transition/search_daily.html" target="_blank">search_daily.html</a> ]</td>
+			<td class="etc"></td>
+		</tr>
+		<tr>
+			<td class="secDepth">월 조회</td>
+			<td class="link">[ <a href="html/transition/search_monthly.html" target="_blank">search_monthly.html</a> ]</td>
+			<td class="etc"></td>
+		</tr>
+		<tr>
+			<td class="secDepth">년 조회</td>
+			<td class="link">[ <a href="html/transition/search_year.html" target="_blank">search_year.html</a> ]</td>
+			<td class="etc"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="depthTitle">관리자 기능</td>
+			<td class="secDepth">권한 승인</td>
+			<td class="link">[ <a href="html/administrator/index.html" target="_blank">index.html</a> ]</td>
+			<td class="etc"></td>
+		</tr>
+		<tr>
+			<td colspan="4" class="notice">
+				<strong>남은작업 : </strong><br>
+				① 날짜 + 시간 캘린더 : 멀티데이트피커 사용 예정 (<a href="https://dubrox.github.io/Multiple-Dates-Picker-for-jQuery-UI" target="_blank">https://dubrox.github.io/Multiple-Dates-Picker-for-jQuery-UI</a>)<br>
+				② 서비스추이 > 일,월,년 각각 검색조건폼 다르게 구성<br>
+				③ 실시간 모니터링 검색폼<br>
+				④ 그래프 영역 Temp<br>
+			</td>
+		</tr>
+	</table>
+</div>
+
+</body>
+</html>

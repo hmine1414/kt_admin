@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
+<meta name="description" content="KT 인터넷 속도 측정 관리 시스템">
+<meta name="keywords" content="KT 인터넷 속도 측정 관리 시스템">
+<title>KT 인터넷 속도 측정 관리 시스템</title>
+<link rel="icon" type="image/png" href="../../resources/images/favicon.png">
+<link rel="stylesheet" type="text/css" href="../../resources/css/reset.css">
+<script src="../../resources/js/jquery-1.11.2.min.js"></script>
+<script src="../../resources/js/jquery_ui.js"></script>
+</head>
+
+<body>
+
+<div id="wrap">	
+	
+	<div class="section-wrap">
+		<!-- S: section--lnb -->
+		<div class="section--lnb">
+			<button type="button" class="btn-lnb-toggle" onclick="front.lnbToggle()" title="메뉴 닫힘">닫힘</button>
+			<div class="fixed-menu">
+				<span class="kt-logo" onclick="location.href='../monitoring/index.html'">KT</span>
+				<ul>
+					<li><a href="javascript: front.lnbMenuActive(0)" title="실시간 모니터링">실시간 모니터링</a></li>
+					<li class="on"><a href="javascript: front.lnbMenuActive(1)" title="서비스 현황">서비스 현황</a></li>
+					<li><a href="javascript: front.lnbMenuActive(2)" title="서비스 추이">서비스 추이</a></li>
+					<li><a href="javascript: front.lnbMenuActive(3)" title="관리자 기능">관리자 기능</a></li>
+				</ul>
+			</div>
+			<div class="lnb-submenu">
+				<div class="kt-title" onclick="location.href='../monitoring/index.html'"><strong>인터넷 속도측정 관리 시스템</strong></div>
+				<ul>
+					<li>
+						<div>
+							<strong>실시간 모니터링</strong>
+							<ul>
+								<li><a href="../monitoring/index.html">실시간 추이</a></li>
+								<li><a href="../monitoring/index.html">미정</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="on">
+						<div>
+							<strong>서비스 현황</strong>
+							<ul>
+								<li class="on"><a href="../status/index.html">서비스 현황 조회</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>서비스 추이</strong>
+							<ul>
+								<li><a href="../transition/search_daily.html">일 조회</a></li>
+								<li><a href="../transition/search_monthly.html">월 조회</a></li>
+								<li><a href="../transition/search_year.html">년 조회</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div>
+							<strong>관리자 기능</strong>
+							<ul>
+								<li><a href="../administrator/index.html">권한 승인</a></li>
+								<li><a href="../administrator/index.html">사용자 관리</a></li>
+								<li><a href="../administrator/index.html">접속 이력조회</a></li>
+								<li><a href="../administrator/index.html">마스킹해제 이력조회</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--//E: section--lnb -->
+
+		<!-- S: section--container -->
+		<div class="section--container">		
+			<div class="profile-position">
+				<span class="first-name">홍</span>
+				<p><strong>홍길동</strong><em>총괄관리자</em></p>
+				<button type="button" class="btn-logout" title="로그아웃">로그아웃</button>
+			</div>
+			<div class="section--contents">
+				<ul class="page-navi">
+					<li><strong>서비스 현황</strong></li>
+					<li><strong>서비스 현황 조회</strong></li>
+				</ul>
+				<div class="page-contents">
+					<!-- S: search-pannel -->
+					<div class="search-pannel toggle-close">
+						<fieldset>
+							<legend>서비스 현황 조회 검색폼</legend>
+							<ul>
+								<li>
+									<div class="form-group single">
+										<label>이름</label>
+										<div>
+											<p class="inpbox"><input type="text" placeholder="이름을 입력해주세요"></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>로그인 ID</label>
+										<div>
+											<p class="inpbox"><input type="text" placeholder="ID를 입력해주세요"></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>IP</label>
+										<div>
+											<p class="inpbox"><input type="text" placeholder="IP를 입력해주세요"></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>측정타입</label>
+										<div>
+											<ul class="chk-btn">
+												<li><input type="checkbox" name="measureType" id="measure-100m" checked><label for="measure-100m">100M</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-1g"><label for="measure-1g">1G</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-10g"><label for="measure-10g">10G</label></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>측정서버</label>
+										<div>
+											<p class="optionbox">
+												<select><option>상품</option><option>인터넷 베이직</option><option>인터넷 슬림</option></select>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>조직명</label>
+										<div>
+											<p class="optionbox">
+												<select><option>융합서비스팀</option></select>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>구분</label>
+										<div>
+											<p class="optionbox">
+												<select><option>vnms_was02</option><option>vnms_was03</option><option>vnms_was04</option></select>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li class="date"> <!-- 기간만 date 클래스 추가 -->
+									<div class="form-group single">
+										<label>실행일자</label>
+										<div>
+											<span class="datebox"><input type="text" value=""></span>
+											<span class="datebox"><input type="text" value=""></span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</fieldset>
+						<p class="btncenter">
+							<button type="button" class="btn-green btn-medium round"><em class="search">조회</em></button>
+							<button type="button" class="btn-gray btn-medium round">엑셀</button>
+						</p>
+						<span class="btn-search-toggle"><button type="button" onclick="front.searchToggle()"><em>상세조회</em></button></span>
+					</div>
+					<!-- //E: search-pannel -->
+
+					<!-- S: search-result-pannel -->
+					<div class="search-result-pannel">
+						<ul class="tabbox">
+							<li class="on"><a href="#">전체</a></li>
+							<li><a href="#">상품별</a></li>
+							<li><a href="#">청약지점별</a></li>
+							<li><a href="#">기술방식별</a></li>
+							<li><a href="#">OLT위치별</a></li>
+							<li><a href="#">청약여부</a></li>
+						</ul>
+
+						<!-- S: tabcontents -->
+						<div class="tabcontents">
+							<div class="tab-hiddencontents on"> <!-- on이 없으면 hidden -->
+								<div class="boardlist-group">
+									<div class="border-header-info">
+										<div class="during-date">
+											<p><span>2023-05-01 <b>00:00</b></span><span>2023-05-01 <b>00:00</b></span></p>
+										</div>
+										<div class="sort-view">
+											<strong>총 <em>89</em>건</strong>
+											<span class="optionbox" style="width:130px">
+												<select>
+													<option>10건씩 보기</option>
+													<option>20건씩 보기</option>
+													<option>30건씩 보기</option>
+													<option>40건씩 보기</option>
+													<option>50건씩 보기</option>
+												</select>
+											</span>
+										</div>
+									</div>
+									<div class="boardlist">
+										<table>
+											<colgroup>
+												<col style="*">
+												<col style="width:7%">
+												<col style="width:9%">
+												<col style="width:9%">
+												<col style="width:8.5%">
+												<col style="width:8.5%">
+												<col style="width:8%">
+												<col style="width:10%">
+												<col style="width:10%">
+												<col style="width:9.5%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th>
+														<b>상품</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+													<th class="txtright">
+														<b>일반측정건수</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+													<th class="txtright">
+														<b>SLA 유효측정건수</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+													<th class="txtright">
+														<b>SLA 유효미달건수</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+													<th class="txtright">
+														<b>SLA 측정건수</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+													<th class="txtright">
+														<b>SLA 미달건수</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+													<th class="txtright">
+														<b>이의신청건수</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+													<th>
+														<b>최대 속도</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+													<th>
+														<b>최소 속도</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+													<th>
+														<b>평균 속도</b>
+														<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="txtleft">인터넷 슬림</td>
+													<td class="txtright">1</td>
+													<td class="txtright">2</td>
+													<td class="txtright">0</td>
+													<td class="txtright">10</td>
+													<td class="txtright">5</td>
+													<td class="txtright">7</td>
+													<td>290Mbps</td>
+													<td>66.67Mbps</td>
+													<td>239.52Mbps</td>
+												</tr>
+												<tr>
+													<td class="txtleft">인터넷 슬림</td>
+													<td class="txtright">1</td>
+													<td class="txtright">2</td>
+													<td class="txtright">0</td>
+													<td class="txtright">10</td>
+													<td class="txtright">5</td>
+													<td class="txtright">7</td>
+													<td>290Mbps</td>
+													<td>66.67Mbps</td>
+													<td>239.52Mbps</td>
+												</tr>
+												<tr>
+													<td class="txtleft">인터넷 슬림베이직 플러스</td>
+													<td class="txtright">1</td>
+													<td class="txtright">2</td>
+													<td class="txtright">0</td>
+													<td class="txtright">10</td>
+													<td class="txtright">5</td>
+													<td class="txtright">7</td>
+													<td>290Mbps</td>
+													<td>66.67Mbps</td>
+													<td>239.52Mbps</td>
+												</tr>
+												<tr>
+													<td class="txtleft">인터넷 슬림베이직 플러스슬림베이직 플러스슬림베이직 플러스슬림베이직 플러스</td>
+													<td class="txtright">10</td>
+													<td class="txtright">2</td>
+													<td class="txtright">0</td>
+													<td class="txtright">10</td>
+													<td class="txtright">22</td>
+													<td class="txtright">780</td>
+													<td>290Mbps</td>
+													<td>66.67Mbps</td>
+													<td>239.52Mbps</td>
+												</tr>
+												<tr>
+													<td class="txtleft">인터넷 베이직</td>
+													<td class="txtright">20</td>
+													<td class="txtright">7478</td>
+													<td class="txtright">447</td>
+													<td class="txtright">40</td>
+													<td class="txtright">22</td>
+													<td class="txtright">1000</td>
+													<td>300Mbps</td>
+													<td>210.5Mbps</td>
+													<td>30Mbps</td>
+												</tr>
+												<tr>
+													<td class="txtleft">인터넷 베이직</td>
+													<td class="txtright">20</td>
+													<td class="txtright">100</td>
+													<td class="txtright">50</td>
+													<td class="txtright">5216</td>
+													<td class="txtright">22</td>
+													<td class="txtright">82</td>
+													<td>300Mbps</td>
+													<td>210.5Mbps</td>
+													<td>30Mbps</td>
+												</tr>
+												<tr>
+													<td class="txtleft">인터넷 베이직</td>
+													<td class="txtright">20</td>
+													<td class="txtright">26516</td>
+													<td class="txtright">50</td>
+													<td class="txtright">40</td>
+													<td class="txtright">54651</td>
+													<td class="txtright">82</td>
+													<td>300Mbps</td>
+													<td>210.5Mbps</td>
+													<td>30Mbps</td>
+												</tr>
+												<tr>
+													<td class="txtleft">인터넷 베이직</td>
+													<td class="txtright">20</td>
+													<td class="txtright">100</td>
+													<td class="txtright">77232</td>
+													<td class="txtright">40</td>
+													<td class="txtright">22</td>
+													<td class="txtright">82</td>
+													<td>300Mbps</td>
+													<td>210.5Mbps</td>
+													<td>30Mbps</td>
+												</tr>
+												<tr>
+													<td class="txtleft">인터넷 베이직</td>
+													<td class="txtright">1189</td>
+													<td class="txtright">100</td>
+													<td class="txtright">50</td>
+													<td class="txtright">40</td>
+													<td class="txtright">22</td>
+													<td class="txtright">82</td>
+													<td>300Mbps</td>
+													<td>210.5Mbps</td>
+													<td>30Mbps</td>
+												</tr>
+												<tr>
+													<td class="txtleft">인터넷 베이직</td>
+													<td class="txtright">20</td>
+													<td class="txtright">100</td>
+													<td class="txtright">1120</td>
+													<td class="txtright">40</td>
+													<td class="txtright">22</td>
+													<td class="txtright">82</td>
+													<td>300Mbps</td>
+													<td>210.5Mbps</td>
+													<td>30Mbps</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="paging">
+										<button type="button" class="btn-paging-first" title="처음">처음</button>
+										<button type="button" class="btn-paging-prev" title="이전">이전</button>
+										<span>
+											<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+											<a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a>
+										</span>
+										<button type="button" class="btn-paging-next" title="다음">다음</button>
+										<button type="button" class="btn-paging-end" title="끝">끝</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //E: tabcontents -->
+					</div>
+					<!-- //E: search-result-pannel -->
+				</div>
+			</div>
+		</div>	
+		<!--//E: section--container -->
+	</div>
+</div>
+
+<script src="../../resources/js/front_ui.js"></script>
+<script>
+
+</script>
+</body>
+</html>
