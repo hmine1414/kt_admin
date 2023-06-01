@@ -137,7 +137,7 @@ frontUI.prototype = {
 			modalEl.addClass("active");
 			
 			if($("body > .pop-transparents-layer").length == 0) {
-				$("body").append("<div class='pop-transparents-layer' style='opacity:0'></div>");
+				$("body").append("<div class='pop-transparents-layer'></div>");
 			}
 			transparentLayer = $("body > .pop-transparents-layer");
 		}else{			

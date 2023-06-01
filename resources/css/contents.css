@@ -1,14 +1,15 @@
 @charset "UTF-8";
 
 /* contents */
-.loginbox {position:relative; left:50%; top:50%; transform:translate(-50%, -50%); width:456px; overflow:hidden; padding:55px 32px 47px 32px; background:#fafafc; border:1px solid #e6e9f2; border-radius:10px}
+.loginbox {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:456px; overflow:hidden; padding:55px 32px 47px 32px; background:#fafafc; border:1px solid #e6e9f2; border-radius:10px}
 .loginbox .title-login {width:100%; height:30px; margin:0 0 40px 0; text-align:center}
 .loginbox .title-login strong {display:inline-block; height:30px; padding:0 0 0 36px; background:url('../images/logo_kt.png') no-repeat 0 50%; line-height:36px; color:#20242c; font-size:26px; font-weight:800}
 .loginbox fieldset {text-align:center}
 .loginbox fieldset button {width:calc(100% - 20px); margin-top:30px}
 .loginbox fieldset > div.id-insert input[type='text'] {padding:0 10px 0 42px; background:#fff url('../images/bg_login_id.png') no-repeat 15px 50%}
-.loginbox fieldset > div.pw-insert {margin-top:-8px}
+.loginbox fieldset > div.pw-insert {margin-top:-10px}
 .loginbox fieldset > div.pw-insert input[type='password'] {padding:0 10px 0 42px; background:#fff url('../images/bg_login_pw.png') no-repeat 15px 50%}
+.loginbox fieldset > div.otp-insert input[type='text'] {padding:0 10px; text-align:center; background:#fff; letter-spacing:5px; font-size:20px}
 .loginbox .inpbox, .loginbox .inpbox {height:68px}
 .loginbox .inpbox input[type="text"], .loginbox .inpbox input[type="password"] {width:calc(100% - 20px); height:calc(100% - 20px); padding:0 10px; border:1px solid #e5e8f1; border-radius:6px; background:#fff; font-size:16px; color:#20242c}
 .loginbox .inpbox input[type="text"]:focus, .loginbox .inpbox input[type="password"]:focus {-webkit-transition:all 0.30s ease-in-out;-moz-transition:all 0.30s ease-in-out; -o-transition:all 0.30s ease-in-out}
