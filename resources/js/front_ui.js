@@ -29,7 +29,7 @@ var frontUI = function() {
 		$('.ui-datepicker-next').prepend('다음 월로 이동');
 
 		$.datepicker.setDefaults($.datepicker.regional['kr']);
-		$(".datebox input").datepicker({
+		$(".datebox input.nm-datepicker").datepicker({
 			showOn: "both",
 			changeMonth: true,
 			changeYear: true,
@@ -41,16 +41,23 @@ var frontUI = function() {
 			buttonImageOnly: true,
 			closeText: '닫기',
 			currentText: '오늘',
-			monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-			monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-			dayNames: ['월요일','화요일','수요일','목요일','금요일','토요일','일요일'],
-			dayNamesShort: ['일','월','화','수','목','금','토'],
-			dayNamesMin: ['일','월','화','수','목','금','토'],
-			dateFormat: 'yy/mm/dd',
+			monthNames: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+			monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+			dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+			dayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+			dayNamesMin: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+			dateFormat: 'yy-mm-dd',
 			beforeShow: function(input) {
 				$("#ui-datepicker-div").css("opacity", "1");
 			}
 		});
+				
+		/* multi datepicker (https://xdsoft.net/jqplugins/datetimepicker/) */
+		$.datetimepicker.setLocale('ko');
+		$('.datebox input.multi-datepicker').datetimepicker({
+			format: 'Y-m-d H:i'		
+		});
+
 		if(me.mobile.matches){
 			isMobile = true;
 		}else if(me.tablet.matches){

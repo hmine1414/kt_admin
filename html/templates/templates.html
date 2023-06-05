@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../resources/css/reset.css">
 <script src="../../resources/js/jquery-1.11.2.min.js"></script>
 <script src="../../resources/js/jquery_ui.js"></script>
+<script src="../../resources/js/jquery.datetimepicker.full.js"></script>
 </head>
 
 <body>
@@ -37,8 +38,8 @@
 						<div>
 							<strong>실시간 모니터링</strong>
 							<ul>
-								<li class="on"><a href="../monitoring/index.html">실시간 추이</a></li> <!-- active class="on" -->
-								<li><a href="../monitoring/index.html">미정</a></li>
+								<li class="on"><a href="../monitoring/index.html">측정타입별</a></li>
+								<li><a href="../monitoring/monitoring_server.html">측정서버별</a></li>
 							</ul>
 						</div>
 					</li>
@@ -64,10 +65,8 @@
 						<div>
 							<strong>관리자 기능</strong>
 							<ul>
-								<li><a href="../administrator/index.html">권한 승인</a></li>
-								<li><a href="../administrator/index.html">사용자 관리</a></li>
-								<li><a href="../administrator/index.html">접속 이력조회</a></li>
-								<li><a href="../administrator/index.html">마스킹해제 이력조회</a></li>
+								<li><a href="../administrator/index.html">고객측정이력조회</a></li>
+								<li><a href="../administrator/user_info.html">사용자정보관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -91,19 +90,33 @@
 					<div class="search-pannel">
 						<fieldset>
 							<legend>서비스 현황 조회 검색폼</legend>
-							<ul class="templates-form">
+							<ul class="templates-form">								
 								<li>
 									<div class="form-group single">
-										<label>달력</label>
+										<label>Multi Datepicker 달력</label>
 										<div>
-											<span class="datebox"><input type="text" value=""></span>
-											<span class="datebox"><input type="text" value=""></span>
+											<span class="datebox"><input type="text" class="multi-datepicker"></span>
+											<span class="datebox"><input type="text" class="multi-datepicker"></span>
 										</div>
 									</div>
 									<div class="codebox">
 										<textarea readonly disabled>
-<span class="datebox"><input type="text" value=""></span>
-<span class="datebox"><input type="text" value=""></span></textarea>
+<span class="datebox"><input type="text" class="multi-datepicker"></span>
+<span class="datebox"><input type="text" class="multi-datepicker"></span></textarea>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>일반 달력</label>
+										<div>
+											<span class="datebox"><input type="text" class="nm-datepicker"></span>
+											<span class="datebox"><input type="text" class="nm-datepicker"></span>
+										</div>
+									</div>
+									<div class="codebox">
+										<textarea readonly disabled>
+<span class="datebox"><input type="text" class="nm-datepicker"></span>
+<span class="datebox"><input type="text" class="nm-datepicker"></span></textarea>
 									</div>
 								</li>
 								<li>
@@ -243,6 +256,266 @@
 							</ul>
 						</fieldset>
 					</div>
+
+					<!-- S: search-pannel -->
+					<div class="search-pannel">
+						<fieldset>
+							<legend>서비스 현황 조회 검색폼</legend>
+							<ul>
+								<li>
+									<div class="form-group single">
+										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk1" checked><label for="serviceTypeChk1">날짜</label></p>
+										<div>
+											<span class="datebox"><input type="text" class="nm-datepicker"></span>
+										</div>
+									</div>
+								</li>
+								<li style="width:390px">
+									<div class="form-group single">
+										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk2"><label for="serviceTypeChk2">기간</label></p>
+										<div>
+											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-01 09:00"></span>
+											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-15 09:00"></span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>측정타입</label>
+										<div>
+											<ul class="chk-btn">
+												<li><input type="checkbox" name="measureType" id="measure-100m" checked><label for="measure-100m">100M</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-1g"><label for="measure-1g">1G</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-10g"><label for="measure-10g">10G</label></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<p class="btncenter">
+								<button type="button" class="btn-green btn-medium round"><em class="search">조회</em></button>
+							</p>
+						</fieldset>
+					</div>
+					<!-- //E: search-pannel -->
+
+					<div class="search-pannel">
+						<fieldset>
+							<legend>서비스 현황 조회 검색폼</legend>
+							<ul>
+								<li>
+									<div class="form-group single">
+										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk1" checked><label for="serviceTypeChk1">날짜</label></p>
+										<div>
+											<span class="datebox"><input type="text" class="nm-datepicker"></span>
+										</div>
+									</div>
+								</li>
+								<li style="width:390px">
+									<div class="form-group single">
+										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk2"><label for="serviceTypeChk2">기간</label></p>
+										<div>
+											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-01 09:00"></span>
+											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-15 09:00"></span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>측정타입</label>
+										<div>
+											<ul class="chk-btn">
+												<li><input type="checkbox" name="measureType" id="measure-100m" checked><label for="measure-100m">100M</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-1g"><label for="measure-1g">1G</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-10g"><label for="measure-10g">10G</label></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li style="width:270px">
+									<div class="form-group single">
+										<label>OLT위치</label>
+										<div>
+											<span class="optionbox" style="width:130px"><select><option>강원도</option><option>경기도</option><option>충청북도</option><option>충청남도</option></select></span>
+											<span class="optionbox" style="width:130px"><select><option>속초시</option><option>동해시</option><option>원주시</option><option>춘천시</option><option>정성군</option><option>횡성군</option></select></span>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<p class="btncenter">
+								<button type="button" class="btn-green btn-medium round"><em class="search">조회</em></button>
+							</p>
+						</fieldset>
+					</div>
+
+					<div class="search-pannel tagging"> <!-- tagging  클래스 추가 -->
+						<fieldset>
+							<legend>서비스 현황 조회 검색폼</legend>
+							<ul>
+								<li>
+									<div class="form-group single">
+										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk1" checked><label for="serviceTypeChk1">날짜</label></p>
+										<div>
+											<span class="datebox"><input type="text" class="nm-datepicker"></span>
+										</div>
+									</div>
+								</li>
+								<li style="width:390px">
+									<div class="form-group single">
+										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk2"><label for="serviceTypeChk2">기간</label></p>
+										<div>
+											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-01 09:00"></span>
+											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-15 09:00"></span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>측정타입</label>
+										<div>
+											<ul class="chk-btn">
+												<li><input type="checkbox" name="measureType" id="measure-100m" checked><label for="measure-100m">100M</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-1g"><label for="measure-1g">1G</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-10g"><label for="measure-10g">10G</label></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li style="width:270px">
+									<div class="form-group single">
+										<label>OLT위치</label>
+										<div>
+											<span class="optionbox" style="width:130px"><select><option>강원도</option><option>경기도</option><option>충청북도</option><option>충청남도</option></select></span>
+											<span class="optionbox" style="width:130px"><select><option>속초시</option><option>동해시</option><option>원주시</option><option>춘천시</option><option>정성군</option><option>횡성군</option></select></span>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<p class="btncenter">
+								<button type="button" class="btn-green btn-medium round"><em class="search">조회</em></button>
+							</p>
+						</fieldset>
+						<div class="search-tagging">
+							<button type="button" class="btn-reset"><em>전체해제</em></button>
+							<ul>
+								<li><span>강릉강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- S: search-pannel -->
+					<div class="search-pannel toggle-close">
+						<fieldset>
+							<legend>서비스 현황 조회 검색폼</legend>
+							<ul>
+								<li>
+									<div class="form-group single">
+										<label>이름</label>
+										<div>
+											<p class="inpbox"><input type="text" placeholder="이름을 입력해주세요"></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>로그인 ID</label>
+										<div>
+											<p class="inpbox"><input type="text" placeholder="ID를 입력해주세요"></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>IP</label>
+										<div>
+											<p class="inpbox"><input type="text" placeholder="IP를 입력해주세요"></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>측정타입</label>
+										<div>
+											<ul class="chk-btn">
+												<li><input type="checkbox" name="measureType" id="measure-100m" checked><label for="measure-100m">100M</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-1g"><label for="measure-1g">1G</label></li>
+												<li><input type="checkbox" name="measureType" id="measure-10g"><label for="measure-10g">10G</label></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>측정서버</label>
+										<div>
+											<p class="optionbox">
+												<select><option>상품</option><option>인터넷 베이직</option><option>인터넷 슬림</option></select>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>조직명</label>
+										<div>
+											<p class="optionbox">
+												<select><option>융합서비스팀</option></select>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>구분</label>
+										<div>
+											<p class="optionbox">
+												<select><option>vnms_was02</option><option>vnms_was03</option><option>vnms_was04</option></select>
+											</p>
+										</div>
+									</div>
+								</li>
+								<li style="width:390px">
+									<div class="form-group single">
+										<label>실행일자</label>
+										<div>
+											<span class="datebox"><input type="text" class="multi-datepicker" ></span>
+											<span class="datebox"><input type="text" class="multi-datepicker" ></span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</fieldset>
+						<p class="btncenter">
+							<button type="button" class="btn-green btn-medium round"><em class="search">조회</em></button>
+							<button type="button" class="btn-gray btn-medium round">엑셀</button>
+						</p>
+						<span class="btn-search-toggle"><button type="button" onclick="front.searchToggle()"><em>상세조회</em></button></span>
+					</div>
+					<!-- //E: search-pannel -->
+
 				</div>
 			</div>
 		</div>	

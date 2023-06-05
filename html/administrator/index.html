@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../resources/css/reset.css">
 <script src="../../resources/js/jquery-1.11.2.min.js"></script>
 <script src="../../resources/js/jquery_ui.js"></script>
+<script src="../../resources/js/jquery.datetimepicker.full.js"></script>
 </head>
 
 <body>
@@ -37,8 +38,8 @@
 						<div>
 							<strong>실시간 모니터링</strong>
 							<ul>
-								<li><a href="../monitoring/index.html">실시간 추이</a></li>
-								<li><a href="../monitoring/index.html">미정</a></li>
+								<li><a href="../monitoring/index.html">측정타입별</a></li>
+								<li><a href="../monitoring/monitoring_server.html">측정서버별</a></li>
 							</ul>
 						</div>
 					</li>
@@ -60,14 +61,12 @@
 							</ul>
 						</div>
 					</li>
-					<li class="on">
+					<li class="on"> <!-- active class="on" -->
 						<div>
 							<strong>관리자 기능</strong>
 							<ul>
-								<li class="on"><a href="../administrator/index.html">권한 승인</a></li>
-								<li><a href="../administrator/index.html">사용자 관리</a></li>
-								<li><a href="../administrator/index.html">접속 이력조회</a></li>
-								<li><a href="../administrator/index.html">마스킹해제 이력조회</a></li>
+								<li class="on"><a href="../administrator/index.html">고객측정이력조회</a></li>
+								<li><a href="../administrator/user_info.html">사용자정보관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -86,8 +85,241 @@
 			<div class="section--contents">
 				<ul class="page-navi">
 					<li><strong>관리자 기능</strong></li>
-					<li><strong>권한 승인</strong></li>
+					<li><strong>고객측정이력조회</strong></li>
 				</ul>
+				
+				<div class="page-contents">
+					<!-- S: search-pannel -->
+					<div class="search-pannel">
+						<fieldset>
+							<legend>고객측정이력조회 조회 검색폼</legend>
+							<ul>
+								<li style="width:390px">
+									<div class="form-group single">
+										<label>기간</label>
+										<div>
+											<span class="datebox"><input type="text" class="multi-datepicker" value=""></span>
+											<span class="datebox"><input type="text" class="multi-datepicker" value=""></span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>로그인 ID</label>
+										<div>
+											<p class="inpbox"><input type="text" value=""></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>서비스계약 ID</label>
+										<div>
+											<p class="inpbox"><input type="text" value=""></p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<p class="btncenter">
+								<button type="button" class="btn-green btn-medium round"><em class="search">조회</em></button>
+							</p>
+						</fieldset>
+					</div>
+					<!-- //E: search-pannel -->
+
+					<!-- S: search-result-pannel -->
+					<div class="search-result-pannel">
+						<ul class="tabbox">
+							<li class="on"><a href="#">일반측정</a></li>
+							<li><a href="#">SLA측정</a></li>
+							<li><a href="#">이의신청</a></li>
+						</ul>
+
+						<!-- S: tabcontents -->
+						<div class="tabcontents">
+							<div class="tab-hiddencontents on">
+								<div class="border-header-info">
+									<div class="sort-view">
+										<strong>총 <em>89</em>건</strong>
+										<span class="optionbox" style="width:130px">
+											<select>
+												<option>10건씩 보기</option>
+												<option>20건씩 보기</option>
+												<option>30건씩 보기</option>
+												<option>40건씩 보기</option>
+												<option>50건씩 보기</option>
+											</select>
+										</span>
+									</div>
+								</div>
+								<div class="boardlist">
+									<table>
+										<colgroup>
+											<col style="width:12%">
+											<col style="width:12%">
+											<col style="width:*">
+											<col style="width:10%">
+											<col style="width:10%">
+											<col style="width:10%">
+											<col style="width:10%">
+											<col style="width:10%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>
+													<b>상품</b>
+													<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+												</th>
+												<th>
+													<b>로그인 ID</b>
+													<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+												</th>
+												<th>
+													<b>서비스계약 ID</b>
+													<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+												</th>
+												<th>
+													<b>측정일자</b>
+													<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+												</th>
+												<th class="txtright">
+													<b>다운로드(Mbps)</b>
+													<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+												</th>
+												<th class="txtright">
+													<b>업로드(Mbps)</b>
+													<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+												</th>
+												<th class="txtright">
+													<b>지연(ms)</b>
+													<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+												</th>
+												<th>
+													<b>손실(%)</b>
+													<span class="btn-sort"><button type="button" class="btn-sort-asc" title="오름차순 정렬">오름차순 정렬</button><button type="button" class="btn-sort-desc" title="내림차순 정렬">내림차순 정렬</button></span>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="txtleft">honggildong</td>
+												<td class="txtleft">jiwoo0552</td>
+												<td class="txtleft">인터넷 슬림</td>
+												<td>2023-01-01</td>
+												<td class="txtright">290Mbps</td>
+												<td class="txtright">125.1Mbps</td>
+												<td class="txtright">20ms</td>
+												<td>99.2111%</td>
+											</tr>
+											<tr>
+												<td class="txtleft">honggil</td>
+												<td class="txtleft">jiwoo0552</td>
+												<td class="txtleft">인터넷 슬림베이직 플러스</td>
+												<td>2023-01-01</td>
+												<td class="txtright">290Mbps</td>
+												<td class="txtright">66.67Mbps</td>
+												<td class="txtright">5165ms</td>
+												<td>0.891%</td>
+											</tr>
+											<tr>
+												<td class="txtleft">honggilsoon</td>
+												<td class="txtleft">jiwoo</td>
+												<td class="txtleft">인터넷 베이직</td>
+												<td>2023-01-01</td>
+												<td class="txtright">29Mbps</td>
+												<td class="txtright">66.67Mbps</td>
+												<td class="txtright">20ms</td>
+												<td>5.4%</td>
+											</tr>
+											<tr>
+												<td class="txtleft">honggil</td>
+												<td class="txtleft">jiwoo0552</td>
+												<td class="txtleft">인터넷 베이직 플러스</td>
+												<td>2023-01-01</td>
+												<td class="txtright">172.5Mbps</td>
+												<td class="txtright">67Mbps</td>
+												<td class="txtright">5ms</td>
+												<td>10.4%</td>
+											</tr>
+											<tr>
+												<td class="txtleft">honggilsoon</td>
+												<td class="txtleft">jiwoo</td>
+												<td class="txtleft">인터넷 베이직</td>
+												<td>2023-01-01</td>
+												<td class="txtright">29Mbps</td>
+												<td class="txtright">66.67Mbps</td>
+												<td class="txtright">20ms</td>
+												<td>5.4%</td>
+											</tr>
+											<tr>
+												<td class="txtleft">honggilsoon</td>
+												<td class="txtleft">jiwoo</td>
+												<td class="txtleft">인터넷 베이직</td>
+												<td>2023-01-01</td>
+												<td class="txtright">29Mbps</td>
+												<td class="txtright">66.67Mbps</td>
+												<td class="txtright">20ms</td>
+												<td>5.4%</td>
+											</tr>
+											<tr>
+												<td class="txtleft">honggil</td>
+												<td class="txtleft">jiwoo0552</td>
+												<td class="txtleft">인터넷 슬림베이직 플러스</td>
+												<td>2023-01-01</td>
+												<td class="txtright">290Mbps</td>
+												<td class="txtright">66.67Mbps</td>
+												<td class="txtright">20ms</td>
+												<td>0.891%</td>
+											</tr>
+											<tr>
+												<td class="txtleft">honggilsoon</td>
+												<td class="txtleft">jiwoo</td>
+												<td class="txtleft">인터넷 베이직</td>
+												<td>2023-01-01</td>
+												<td class="txtright">29Mbps</td>
+												<td class="txtright">66.67Mbps</td>
+												<td class="txtright">20ms</td>
+												<td>5.4%</td>
+											</tr>
+											<tr>
+												<td class="txtleft">honggil</td>
+												<td class="txtleft">jiwoo0552</td>
+												<td class="txtleft">인터넷 베이직 플러스</td>
+												<td>2023-01-01</td>
+												<td class="txtright">172.5Mbps</td>
+												<td class="txtright">67Mbps</td>
+												<td class="txtright">5ms</td>
+												<td>10.4%</td>
+											</tr>
+											<tr>
+												<td class="txtleft">honggilsoon</td>
+												<td class="txtleft">jiwoo</td>
+												<td class="txtleft">인터넷 베이직인터넷 베이직인터넷 베이직인터넷 베이직인터넷 베이직인터넷 베이직인터넷 베이직</td>
+												<td>2023-01-01</td>
+												<td class="txtright">29Mbps</td>
+												<td class="txtright">66.67Mbps</td>
+												<td class="txtright">20ms</td>
+												<td>5.4%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="paging">
+									<button type="button" class="btn-paging-first" title="처음">처음</button>
+									<button type="button" class="btn-paging-prev" title="이전">이전</button>
+									<span>
+										<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+										<a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a>
+									</span>
+									<button type="button" class="btn-paging-next" title="다음">다음</button>
+									<button type="button" class="btn-paging-end" title="끝">끝</button>
+								</div>
+							</div>
+						</div>
+						<!-- //E: tabcontents -->
+					</div>
+					<!-- //E: search-result-pannel -->
+				</div>
 				
 			</div>
 		</div>	

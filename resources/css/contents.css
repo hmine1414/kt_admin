@@ -28,6 +28,16 @@ ul.tabbox li.on a {color:#00a2bb}
 .tabcontents {margin-top:30px}
 
 .search-pannel {position:relative; min-height:190px; display:flex; align-items:center; justify-content:center; flex-direction:column; overflow:hidden; margin-bottom:36px; padding:0 0 29px 0; background:#fff; border:1px solid #e6e9f2; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.05)}
+.search-pannel.tagging {min-height:150px; padding-bottom:0}
+.search-pannel.tagging .search-tagging {display:flex; align-items:flex-start; justify-content:flex-start; width:100%; min-height:35px; margin-top:30px; padding:5px 20px; background:#fafafc; border-top:1px solid #e6e9f2}
+.search-pannel.tagging .search-tagging > .btn-reset {position:relative; height:22px; padding-right:18px}
+.search-pannel.tagging .search-tagging > .btn-reset::after {position:absolute; right:0; top:4px; width:1px; height:14px; background:#e6e9f2; content:''}
+.search-pannel.tagging .search-tagging > .btn-reset em {padding:0 0 0 18px; background:url('../images/icon_reset.png') no-repeat 0 50%; color:#9a9fb2; font-size:14px}
+.search-pannel.tagging .search-tagging > ul {display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; flex-direction:row; position:relative; min-height:22px; margin-left:16px}
+.search-pannel.tagging .search-tagging > ul li {position:relative; padding-right:18px; margin-right:25px; text-align:left; line-height:20px}
+.search-pannel.tagging .search-tagging > ul li * {vertical-align:middle}
+.search-pannel.tagging .search-tagging > ul li span {display:inline-block; color:#40b1c6; font-size:14px; font-weight:700}
+.search-pannel.tagging .search-tagging > ul li .btn-delete {position:absolute; right:0; top:50%; width:12px; height:12px; margin-top:-5px; background:url('../images/icon_delete.png') no-repeat 50%; font-size:0; text-indent:-99999px}
 .search-pannel.toggle-close {min-height:150px; padding-bottom:70px}
 .search-pannel.toggle-close fieldset > ul {overflow:hidden; height:0; min-height:0; pointer-events:none; opacity:0; transition:all 0.5s}
 .search-pannel.toggle-open {min-height:150px; padding-bottom:70px}
@@ -42,9 +52,10 @@ ul.tabbox li.on a {color:#00a2bb}
 .search-pannel fieldset {width:100%; max-width:1440px}
 .search-pannel fieldset > ul {width:100%; min-height:65px; margin:0 auto 0; padding-bottom:29px; display:flex; align-items:center; justify-content:center; flex-wrap:wrap}
 .search-pannel fieldset > ul > li {width:calc(100% / 7); margin:20px 32px 0 20px}
-.search-pannel fieldset > ul > li.date {width:390px}
+.search-pannel fieldset > ul > li.column-size2 {width:390px}
 .search-pannel fieldset > ul.templates-form {width:100%; flex-direction:column}
 .search-pannel fieldset > ul.templates-form > li {display:flex; align-items:center; justify-content:space-between; width:100%; min-height:93px; margin:0; padding:6px 0; border-top:1px solid #ddd}
+.search-pannel fieldset > ul.templates-form > li:first-child {margin-top:10px; border-top:0}
 .search-pannel fieldset > ul.templates-form > li .form-group.single {width:100%; max-width:400px}
 .search-pannel fieldset > ul.templates-form > li .form-group.single > label + div {width:100%}
 .search-pannel fieldset > ul.templates-form > li .form-group.single > div button + button {display:block; margin-top:6px}
@@ -52,8 +63,6 @@ ul.tabbox li.on a {color:#00a2bb}
 .search-pannel fieldset > ul.templates-form > li .form-group.single > div ul.chk-btn {float:left}
 .search-pannel fieldset > ul.templates-form > li .codebox {width:calc(100% - 420px)}
 .search-pannel fieldset > ul.templates-form > li .txtbox {min-height:53px}
-
-.search-result-pannel {}
 
 .border-header-info {width:100%; height:40px; margin-bottom:10px; display:flex; align-items:center; justify-content:space-between}
 .border-header-info .during-date p span {display:inline-block; line-height:18px}
@@ -79,9 +88,34 @@ ul.tabbox li.on a {color:#00a2bb}
 .form-group.single {display:flex; align-items:flex-start; justify-content:flex-start; flex-direction:column; margin:10px 0 0 0}
 .form-group.single:first-child {margin-top:0}
 .form-group.single > label {color:#101216; font-weight:700}
-.form-group.single > label + div {width:100%; margin-top:7px}
+.form-group.single > label + div {width:100%; margin-top:6px}
 .form-group.single > label + div .ml20:first-child {margin-left:0 !important}
+.form-group.single > p {color:#101216; font-weight:700}
+.form-group.single > p + div {width:100%; margin-top:6px}
+.form-group.single > p + div .ml20:first-child {margin-left:0 !important}
 .form-group.single .codebox {margin-left:10px}
+
+.chart-listgroup {display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; width:100%}
+.chart-listgroup dl {width:calc((100% - 40px) / 3); height:365px; margin-left:20px; margin-bottom:20px; border:1px solid #e6e9f2; border-radius:9px}
+.chart-listgroup dl:first-child {margin-left:0}
+.chart-listgroup dl:nth-child(3n+1) {margin-left:0}
+.chart-listgroup dl dt {height:60px; padding:0 20px; display:flex; align-items:center; justify-content:space-between; background:#f2f3f7; border-radius:9px 9px 0 0}
+.chart-listgroup dl dt strong {color:#101216; font-size:20px; font-weight:700}
+.chart-listgroup dl dd {height:calc(100% - 60px); padding:20px 0 23px 20px; text-align:right}
+
+.monitoring-listgroup {width:100%}
+.monitoring-listgroup > ul {width:100%; display:flex; align-items:flex-start; justify-content:space-between}
+.monitoring-listgroup > ul > li {width:calc((100% - 48px) / 4); height:100%; margin-left:16px; display:flex; align-items:flex-start; justify-content:center; flex-direction:column; border:1px solid #e6e9f2; border-radius:10px}
+.monitoring-listgroup > ul > li:first-child {margin-left:0}
+.monitoring-listgroup > ul > li dl:last-child {background:0}
+.monitoring-listgroup > ul > li > h1 {width:100%; height:60px; padding:0 20px; background:#f2f3f7; border-radius:10px 10px 0 0; color:#101216; font-size:20px; font-weight:800; line-height:62px}
+.monitoring-listgroup > ul > li > div {width:100%; height:calc(100% - 60px); padding:0 15px; display:flex; align-items:flex-start; justify-content:center; flex-direction:column}
+.monitoring-listgroup > ul > li dl {width:100%; height:270px; padding:20px 0 0 0; background:url('../images/bg_dotline_col.png') repeat-x 0 100%}
+.monitoring-listgroup > ul > li dl dt {height:32px; padding:0 4px; display:flex; align-items:center; justify-content:space-between}
+.monitoring-listgroup > ul > li dl dt strong {color:#101216; font-size:16px; font-weight:800}
+.monitoring-listgroup > ul > li dl dd {height:calc(100% - 30px); margin-top:16px; padding:0; text-align:center; font-size:0}
+.monitoring-listgroup > ul > li dl dd div {width:100%; overflow:hidden}
+.monitoring-listgroup > ul > li dl dd div img {}
 
 
 /* meda query */

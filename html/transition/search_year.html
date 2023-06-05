@@ -55,9 +55,9 @@
 						<div>
 							<strong>서비스 추이</strong>
 							<ul>
-								<li class="on"><a href="../transition/search_daily.html">일 조회</a></li>
+								<li><a href="../transition/search_daily.html">일 조회</a></li>
 								<li><a href="../transition/search_monthly.html">월 조회</a></li>
-								<li><a href="../transition/search_year.html">년 조회</a></li>
+								<li class="on"><a href="../transition/search_year.html">년 조회</a></li>
 							</ul>
 						</div>
 					</li>
@@ -85,12 +85,12 @@
 			<div class="section--contents">
 				<ul class="page-navi">
 					<li><strong>서비스 추이</strong></li>
-					<li><strong>일 조회</strong></li>
+					<li><strong>년 조회</strong></li>
 				</ul>
 				
 				<div class="page-contents">
 					<!-- S: search-pannel -->
-					<div class="search-pannel tagging"> <!-- tagging  클래스 추가 -->
+					<div class="search-pannel">
 						<fieldset>
 							<legend>서비스 현황 조회 검색폼</legend>
 							<ul>
@@ -98,7 +98,7 @@
 									<div class="form-group single">
 										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk1" checked><label for="serviceTypeChk1">날짜</label></p>
 										<div>
-											<span class="datebox"><input type="text" class="nm-datepicker"></span>
+											<span class="datebox"><input type="text" class="nm-datepicker year"></span>
 										</div>
 									</div>
 								</li>
@@ -106,8 +106,8 @@
 									<div class="form-group single">
 										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk2"><label for="serviceTypeChk2">기간</label></p>
 										<div>
-											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-01 09:00"></span>
-											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-15 09:00"></span>
+											<span class="datebox disabled"><input type="text" class="nm-datepicker" disabled value="2023-05-01"></span>
+											<span class="datebox disabled"><input type="text" class="nm-datepicker" disabled value="2023-05-15"></span>
 										</div>
 									</div>
 								</li>
@@ -123,49 +123,11 @@
 										</div>
 									</div>
 								</li>
-								<li style="width:270px">
-									<div class="form-group single">
-										<label>OLT위치</label>
-										<div>
-											<span class="optionbox" style="width:130px"><select><option>강원도</option><option>경기도</option><option>충청북도</option><option>충청남도</option></select></span>
-											<span class="optionbox" style="width:130px"><select><option>속초시</option><option>동해시</option><option>원주시</option><option>춘천시</option><option>정성군</option><option>횡성군</option></select></span>
-										</div>
-									</div>
-								</li>
 							</ul>
 							<p class="btncenter">
 								<button type="button" class="btn-green btn-medium round"><em class="search">조회</em></button>
 							</p>
 						</fieldset>
-						<div class="search-tagging">
-							<button type="button" class="btn-reset"><em>전체해제</em></button>
-							<ul>
-								<li><span>강릉강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-							</ul>
-						</div>
 					</div>
 					<!-- //E: search-pannel -->
 
@@ -233,6 +195,38 @@
 
 <script src="../../resources/js/front_ui.js"></script>
 <script>
+$('.nm-datepicker.year').datepicker( {
+    yearRange: "c-100:c",
+    changeMonth: false,
+    changeYear: true,
+    showButtonPanel: true,
+    closeText:'OK',
+    currentText: 'This year',
+	dateFormat: 'yy',
+    onClose: function(dateText, inst) {
+      var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+      $(this).val($.datepicker.formatDate("yy", new Date(year, 0, 1)));
+    },
+    beforeShow: function(input, inst){
+      if ($(this).val()!=''){
+        var tmpyear = $(this).val();
+        $(this).datepicker('option','defaultDate',new Date(tmpyear, 0, 1));
+      }
+    }
+  }).focus(function () {
+    $(".ui-datepicker-month").hide();
+    $(".ui-datepicker-calendar").hide();
+    $(".ui-datepicker-current").hide();
+    /*$(".ui-datepicker-close").hide();*/
+    $(".ui-datepicker-prev").hide();
+    $(".ui-datepicker-next").hide();
+    $(".ui-widget-header").addClass("yearOnly");
+    $("#ui-datepicker-div").position({
+      my: "left top",
+      at: "left bottom",
+      of: $(this)
+    });
+  }).attr("readonly", false);
 
 </script>
 </body>

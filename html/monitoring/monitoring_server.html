@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
 <meta name="description" content="KT 인터넷 속도 측정 관리 시스템">
 <meta name="keywords" content="KT 인터넷 속도 측정 관리 시스템">
-<title>KT 인터넷 속도 측정 관리 시스템</title>
+<title>템플릿 | KT 인터넷 속도 측정 관리 시스템</title>
 <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
 <link rel="stylesheet" type="text/css" href="../../resources/css/reset.css">
 <script src="../../resources/js/jquery-1.11.2.min.js"></script>
@@ -25,21 +25,21 @@
 			<div class="fixed-menu">
 				<span class="kt-logo" onclick="location.href='../monitoring/index.html'">KT</span>
 				<ul>
-					<li><a href="javascript: front.lnbMenuActive(0)" title="실시간 모니터링">실시간 모니터링</a></li>
+					<li class="on"><a href="javascript: front.lnbMenuActive(0)" title="실시간 모니터링">실시간 모니터링</a></li> <!-- active class="on" -->
 					<li><a href="javascript: front.lnbMenuActive(1)" title="서비스 현황">서비스 현황</a></li>
-					<li class="on"><a href="javascript: front.lnbMenuActive(2)" title="서비스 추이">서비스 추이</a></li>
+					<li><a href="javascript: front.lnbMenuActive(2)" title="서비스 추이">서비스 추이</a></li>
 					<li><a href="javascript: front.lnbMenuActive(3)" title="관리자 기능">관리자 기능</a></li>
 				</ul>
 			</div>
 			<div class="lnb-submenu">
 				<div class="kt-title" onclick="location.href='../monitoring/index.html'"><strong>인터넷 속도측정 관리 시스템</strong></div>
 				<ul>
-					<li>
+					<li class="on"> <!-- active class="on" -->
 						<div>
 							<strong>실시간 모니터링</strong>
 							<ul>
 								<li><a href="../monitoring/index.html">측정타입별</a></li>
-								<li><a href="../monitoring/monitoring_server.html">측정서버별</a></li>
+								<li class="on"><a href="../monitoring/monitoring_server.html">측정서버별</a></li>
 							</ul>
 						</div>
 					</li>
@@ -50,12 +50,12 @@
 								<li><a href="../status/index.html">서비스 현황 조회</a></li>
 							</ul>
 						</div>
-					</li>					
-					<li class="on"> <!-- active class="on" -->
+					</li>
+					<li>
 						<div>
 							<strong>서비스 추이</strong>
 							<ul>
-								<li class="on"><a href="../transition/search_daily.html">일 조회</a></li>
+								<li><a href="../transition/search_daily.html">일 조회</a></li>
 								<li><a href="../transition/search_monthly.html">월 조회</a></li>
 								<li><a href="../transition/search_year.html">년 조회</a></li>
 							</ul>
@@ -84,51 +84,39 @@
 			</div>
 			<div class="section--contents">
 				<ul class="page-navi">
-					<li><strong>서비스 추이</strong></li>
-					<li><strong>일 조회</strong></li>
+					<li><strong>실시간 모니터링</strong></li>
+					<li><strong>측정서버별</strong></li>
 				</ul>
 				
 				<div class="page-contents">
 					<!-- S: search-pannel -->
 					<div class="search-pannel tagging"> <!-- tagging  클래스 추가 -->
 						<fieldset>
-							<legend>서비스 현황 조회 검색폼</legend>
+							<legend>측정서버별 조회 검색폼</legend>
 							<ul>
-								<li>
-									<div class="form-group single">
-										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk1" checked><label for="serviceTypeChk1">날짜</label></p>
-										<div>
-											<span class="datebox"><input type="text" class="nm-datepicker"></span>
-										</div>
-									</div>
-								</li>
 								<li style="width:390px">
 									<div class="form-group single">
-										<p class="chk"><input type="radio" name="serviceTypeChk" id="serviceTypeChk2"><label for="serviceTypeChk2">기간</label></p>
+										<p class="chk"><input type="radio" name="monitoringType" id="monitoringType1"><label for="monitoringType1">기간</label></p>
 										<div>
-											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-01 09:00"></span>
-											<span class="datebox disabled"><input type="text" class="multi-datepicker" disabled value="2023-05-15 09:00"></span>
+											<span class="datebox"><input type="text" class="multi-datepicker" value="2023-05-01 09:00"></span>
+											<span class="datebox"><input type="text" class="multi-datepicker" value="2023-05-15 09:00"></span>
+										</div>
+									</div>
+								</li>
+								<li style="width:330px">
+									<div class="form-group single">
+										<p class="chk"><input type="radio" name="monitoringType" id="monitoringType2"><label for="monitoringType2">최근</label></p>
+										<div>
+											<span class="optionbox" style="width:180px"><select><option>최근 5분</option><option>최근 30분</option><option>최근 1시간</option><option>최근 1일</option><option>최근 7일</option></select></span>
+											<span class="optionbox" style="width:130px"><select><option>OFF</option><option>30초</option><option>1분</option><option>5분</option><option>10분</option></select></span>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="form-group single">
-										<label>측정타입</label>
+										<label>측정서버</label>
 										<div>
-											<ul class="chk-btn">
-												<li><input type="checkbox" name="measureType" id="measure-100m" checked><label for="measure-100m">100M</label></li>
-												<li><input type="checkbox" name="measureType" id="measure-1g"><label for="measure-1g">1G</label></li>
-												<li><input type="checkbox" name="measureType" id="measure-10g"><label for="measure-10g">10G</label></li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li style="width:270px">
-									<div class="form-group single">
-										<label>OLT위치</label>
-										<div>
-											<span class="optionbox" style="width:130px"><select><option>강원도</option><option>경기도</option><option>충청북도</option><option>충청남도</option></select></span>
-											<span class="optionbox" style="width:130px"><select><option>속초시</option><option>동해시</option><option>원주시</option><option>춘천시</option><option>정성군</option><option>횡성군</option></select></span>
+											<p class="optionbox"><select><option>혜화서버#1</option><option>혜화서버#2</option><option>혜화서버#3</option><option>혜화서버#4</option><option>혜화서버#5</option></select></p>
 										</div>
 									</div>
 								</li>
@@ -140,30 +128,11 @@
 						<div class="search-tagging">
 							<button type="button" class="btn-reset"><em>전체해제</em></button>
 							<ul>
-								<li><span>강릉강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>강릉시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>속초시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>동해시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
-								<li><span>춘천시</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>혜화서버#1</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>혜화서버#2</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>혜화서버#3</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>혜화서버#4</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>혜화서버#5</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
 							</ul>
 						</div>
 					</div>

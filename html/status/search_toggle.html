@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../resources/css/reset.css">
 <script src="../../resources/js/jquery-1.11.2.min.js"></script>
 <script src="../../resources/js/jquery_ui.js"></script>
+<script src="../../resources/js/jquery.datetimepicker.full.js"></script>
 </head>
 
 <body>
@@ -37,12 +38,12 @@
 						<div>
 							<strong>실시간 모니터링</strong>
 							<ul>
-								<li><a href="../monitoring/index.html">실시간 추이</a></li>
-								<li><a href="../monitoring/index.html">미정</a></li>
+								<li><a href="../monitoring/index.html">측정타입별</a></li>
+								<li><a href="../monitoring/monitoring_server.html">측정서버별</a></li>
 							</ul>
 						</div>
-					</li>
-					<li class="on">
+					</li>					
+					<li class="on"> <!-- active class="on" -->
 						<div>
 							<strong>서비스 현황</strong>
 							<ul>
@@ -64,10 +65,8 @@
 						<div>
 							<strong>관리자 기능</strong>
 							<ul>
-								<li><a href="../administrator/index.html">권한 승인</a></li>
-								<li><a href="../administrator/index.html">사용자 관리</a></li>
-								<li><a href="../administrator/index.html">접속 이력조회</a></li>
-								<li><a href="../administrator/index.html">마스킹해제 이력조회</a></li>
+								<li><a href="../administrator/index.html">고객측정이력조회</a></li>
+								<li><a href="../administrator/user_info.html">사용자정보관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -160,12 +159,12 @@
 										</div>
 									</div>
 								</li>
-								<li class="date"> <!-- 기간만 date 클래스 추가 -->
+								<li style="width:390px">
 									<div class="form-group single">
 										<label>실행일자</label>
 										<div>
-											<span class="datebox"><input type="text" value=""></span>
-											<span class="datebox"><input type="text" value=""></span>
+											<span class="datebox"><input type="text" class="multi-datepicker" ></span>
+											<span class="datebox"><input type="text" class="multi-datepicker" ></span>
 										</div>
 									</div>
 								</li>

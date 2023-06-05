@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../../resources/css/reset.css">
 <script src="../../resources/js/jquery-1.11.2.min.js"></script>
 <script src="../../resources/js/jquery_ui.js"></script>
+<script src="../../resources/js/jquery.datetimepicker.full.js"></script>
 </head>
 
 <body>
@@ -37,8 +38,8 @@
 						<div>
 							<strong>실시간 모니터링</strong>
 							<ul>
-								<li class="on"><a href="../monitoring/index.html">실시간 추이</a></li> <!-- active class="on" -->
-								<li><a href="../monitoring/index.html">미정</a></li>
+								<li class="on"><a href="../monitoring/index.html">측정타입별</a></li>
+								<li><a href="../monitoring/monitoring_server.html">측정서버별</a></li>
 							</ul>
 						</div>
 					</li>
@@ -64,10 +65,8 @@
 						<div>
 							<strong>관리자 기능</strong>
 							<ul>
-								<li><a href="../administrator/index.html">권한 승인</a></li>
-								<li><a href="../administrator/index.html">사용자 관리</a></li>
-								<li><a href="../administrator/index.html">접속 이력조회</a></li>
-								<li><a href="../administrator/index.html">마스킹해제 이력조회</a></li>
+								<li><a href="../administrator/index.html">고객측정이력조회</a></li>
+								<li><a href="../administrator/user_info.html">사용자정보관리</a></li>
 							</ul>
 						</div>
 					</li>
@@ -86,8 +85,154 @@
 			<div class="section--contents">
 				<ul class="page-navi">
 					<li><strong>실시간 모니터링</strong></li>
-					<li><strong>실시간 추이</strong></li>
+					<li><strong>측정타입별</strong></li>
 				</ul>
+				<div class="page-contents">
+					<!-- S: search-pannel -->
+					<div class="search-pannel tagging"> <!-- tagging  클래스 추가 -->
+						<fieldset>
+							<legend>측정타입별 조회 검색폼</legend>
+							<ul>
+								<li style="width:390px">
+									<div class="form-group single">
+										<p class="chk"><input type="radio" name="monitoringType" id="monitoringType1"><label for="monitoringType1">기간</label></p>
+										<div>
+											<span class="datebox"><input type="text" class="multi-datepicker" value="2023-05-01 09:00"></span>
+											<span class="datebox"><input type="text" class="multi-datepicker" value="2023-05-15 09:00"></span>
+										</div>
+									</div>
+								</li>
+								<li style="width:330px">
+									<div class="form-group single">
+										<p class="chk"><input type="radio" name="monitoringType" id="monitoringType2"><label for="monitoringType2">최근</label></p>
+										<div>
+											<span class="optionbox" style="width:180px"><select><option>최근 5분</option><option>최근 30분</option><option>최근 1시간</option><option>최근 1일</option><option>최근 7일</option></select></span>
+											<span class="optionbox" style="width:130px"><select><option>OFF</option><option>30초</option><option>1분</option><option>5분</option><option>10분</option></select></span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="form-group single">
+										<label>측정서버</label>
+										<div>
+											<p class="optionbox"><select><option>혜화서버#1</option><option>혜화서버#2</option><option>혜화서버#3</option><option>혜화서버#4</option><option>혜화서버#5</option></select></p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<p class="btncenter">
+								<button type="button" class="btn-green btn-medium round"><em class="search">조회</em></button>
+							</p>
+						</fieldset>
+						<div class="search-tagging">
+							<button type="button" class="btn-reset"><em>전체해제</em></button>
+							<ul>
+								<li><span>혜화서버#1</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>혜화서버#2</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>혜화서버#3</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>혜화서버#4</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+								<li><span>혜화서버#5</span><button type="button" class="btn-delete" title="삭제">삭제</button></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //E: search-pannel -->
+
+					<!-- S: search-result-pannel -->
+					<div class="search-result-pannel">
+						<ul class="tabbox">
+							<li class="on"><a href="#">전체</a></li>
+							<li><a href="#">측정서버</a></li>
+							<li><a href="#">OLT위치</a></li>
+							<li><a href="#">청약여부</a></li>
+						</ul>
+
+						<!-- S: tabcontents -->
+						<div class="tabcontents">
+							<div class="tab-hiddencontents on">
+								<div class="monitoring-listgroup">
+									<ul>
+										<li>
+											<h1>전체(합)</h1>
+											<div>
+												<dl>
+													<dt><strong>일반 측정 건수</strong><button type="button" class="btn-lightgray btn-small">엑셀</button></dt>
+													<dd>
+														<div><img src="../../resources/images/temp/temp_graph_01.jpg" alt=""></div>
+													</dd>
+												</dl>
+												<dl>
+													<dt><strong>SLA 측정 건수</strong><button type="button" class="btn-lightgray btn-small">엑셀</button></dt>
+													<dd>
+														<div><img src="../../resources/images/temp/temp_graph_02.jpg" alt=""></div>
+													</dd>
+												</dl>
+												<dl>
+													<dt><strong>SLA 측정 미달 건수</strong><button type="button" class="btn-lightgray btn-small">엑셀</button></dt>
+													<dd>
+														<div><img src="../../resources/images/temp/temp_graph_03.jpg" alt=""></div>
+													</dd>
+												</dl>
+											</div>
+										</li>
+										<li>
+											<h1>100M 측정</h1>
+											<div>
+												<dl>
+													<dt><strong>일반 측정 건수</strong><button type="button" class="btn-lightgray btn-small">엑셀</button></dt>
+													<dd>
+														<div><img src="../../resources/images/temp/temp_graph_01.jpg" alt=""></div>
+													</dd>
+												</dl>
+												<dl>
+													<dt><strong>SLA 측정 건수</strong><button type="button" class="btn-lightgray btn-small">엑셀</button></dt>
+													<dd>
+														<div><img src="../../resources/images/temp/temp_graph_02.jpg" alt=""></div>
+													</dd>
+												</dl>
+												<dl>
+													<dt><strong>SLA 측정 미달 건수</strong><button type="button" class="btn-lightgray btn-small">엑셀</button></dt>
+													<dd>
+														<div><img src="../../resources/images/temp/temp_graph_03.jpg" alt=""></div>
+													</dd>
+												</dl>
+											</div>
+										</li>
+										<li>
+											<h1>1G 측정</h1>
+											<div>
+												<dl>
+													<dt><strong>일반 측정 건수</strong><button type="button" class="btn-lightgray btn-small">엑셀</button></dt>
+													<dd>
+														<div><img src="../../resources/images/temp/temp_graph_01.jpg" alt=""></div>
+													</dd>
+												</dl>
+												<dl>
+													<dt><strong>SLA 측정 건수</strong><button type="button" class="btn-lightgray btn-small">엑셀</button></dt>
+													<dd>
+														<div><img src="../../resources/images/temp/temp_graph_02.jpg" alt=""></div>
+													</dd>
+												</dl>
+											</div>
+										</li>
+										<li>
+											<h1>10G 측정</h1>
+											<div>
+												<dl>
+													<dt><strong>SLA 측정 미달 건수</strong><button type="button" class="btn-lightgray btn-small">엑셀</button></dt>
+													<dd>
+														<div><img src="../../resources/images/temp/temp_graph_03.jpg" alt=""></div>
+													</dd>
+												</dl>
+											</div>
+										</li>
+									</ul>										
+								</div>
+							</div>
+						</div>
+						<!-- //E: tabcontents -->
+					</div>
+					<!-- //E: search-result-pannel -->
+				</div>
 			</div>
 		</div>	
 		<!--//E: section--container -->
