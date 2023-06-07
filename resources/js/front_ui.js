@@ -91,7 +91,7 @@ frontUI.prototype = {
 		$("body").append($("<div class='loaderbox'><p class='loader'>로딩중</p></div>"));
 		setTimeout(function(){
 			$(".loaderbox").hide();
-		}, 2000);
+		}, 3000);
 	},
 	lnbToggle(){
 		var sectionEl = $(".section-wrap");

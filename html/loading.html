@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, viewport-fit=cover" />
 <meta name="description" content="KT 인터넷 속도 측정 관리 시스템">
 <meta name="keywords" content="KT 인터넷 속도 측정 관리 시스템">
-<title>로그인 | KT 인터넷 속도 측정 관리 시스템</title>
+<title>로딩중 | KT 인터넷 속도 측정 관리 시스템</title>
 <link rel="icon" type="image/png" href="../resources/images/favicon.png">
 <link rel="stylesheet" type="text/css" href="../resources/css/reset.css">
 <script src="../resources/js/jquery-1.11.2.min.js"></script>
@@ -15,8 +15,7 @@
 
 <body>
 
-<div id="wrap">
-	
+<div id="wrap">	
 	<div class="loginbox">
 		<div class="title-login"><strong><b class="hide">KT</b> 인터넷 속도 측정 관리 시스템</strong></div>
 		<fieldset>
@@ -30,29 +29,14 @@
 			<div class="otp-insert">
 				<p class="inpbox"><input type="text" value=""></p>
 			</div>
-			<button type="button" class="btn-large btn-green" onclick="front.modalView('pop-alert')">로그인</button>
+			<button type="button" class="btn-large btn-green">로그인</button>
 		</fieldset>
 	</div>
-
-	<!-- S: modalpop (다른 페이지에서도 전역 alert팝업으로 호출 가능) -->
-	<div class="modalpop">		
-		<!-- S: pop-alert -->
-		<div class="popupwrap pop-alert">
-			<div class="pop-contents">
-				<div class="alert-msg">
-					<p>인증번호 확인을 실패하였습니다.<br>인증번호를 재 확인하시고 입력해 주세요</p>
-				</div>
-			</div>
-			<div class="pop-bottom"><button type="button" class="btn-black" onclick="front.modalHide('pop-alert')">닫기</button></div>
-		</div>
-		<!-- //E: pop-alert -->
-	</div>
-	<!-- //E: modalpop -->
 </div>
 
 <script src="../resources/js/front_ui.js"></script>
 <script>
-front.modalView('pop-alert')
+front.loadingData();
 </script>
 </body>
 </html>

@@ -466,7 +466,6 @@ button em.search {padding:0 0 0 24px; background:url('../images/icon_search_01.p
 
 
 /* animation keyframe */
-
 @keyframes bottomToTop {
 	0% {transform:translateY(50px)}
 	100% {transform:translateY(0)}
@@ -480,4 +479,33 @@ button em.search {padding:0 0 0 24px; background:url('../images/icon_search_01.p
 @keyframes TopToBottom {
 	0% {transform:translateY(0)}
 	100% {transform:translateY(-100px)}
+}
+
+
+/* loading */
+.loaderbox {position:absolute; left:0; top:0; z-index:999; width:100%; height:100%}
+.loaderbox::before {position:fixed; left:0; top:0; width:100%; height:100%; z-index:998; background:rgba(0,0,0,0.3); content:''}
+.loader {position:fixed; left:50%; top:50%; z-index:1000; font-size:14px; width:1em; height:1em; border-radius:50%; text-indent:-9999em; -webkit-animation:loadingCircle 1.1s infinite ease; animation:loadingCircle 1.1s infinite ease; -webkit-transform:translateZ(0); -ms-transform:translateZ(0); transform:translateZ(0)}
+@-webkit-keyframes loadingCircle {
+  0%,100% {box-shadow:0em -2.6em 0em 0em #7ae6e6, 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.5), -1.8em -1.8em 0 0em rgba(0,162,187, 0.7)}
+  12.5% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.7), 1.8em -1.8em 0 0em #7ae6e6, 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.5)}
+  25% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.5), 1.8em -1.8em 0 0em rgba(0,162,187, 0.7), 2.5em 0em 0 0em #7ae6e6, 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  37.5% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.5), 2.5em 0em 0 0em rgba(0,162,187, 0.7), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  50% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.5), 1.75em 1.75em 0 0em rgba(0,162,187, 0.7), 0em 2.5em 0 0em #7ae6e6, -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  62.5% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.5), 0em 2.5em 0 0em rgba(0,162,187, 0.7), -1.8em 1.8em 0 0em #7ae6e6, -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  75% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.5), -1.8em 1.8em 0 0em rgba(0,162,187, 0.7), -2.6em 0em 0 0em #7ae6e6, -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  87.5% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.5), -2.6em 0em 0 0em rgba(0,162,187, 0.7), -1.8em -1.8em 0 0em #7ae6e6}
+}
+@keyframes loadingCircle {
+  0%,100% {box-shadow:0em -2.6em 0em 0em #7ae6e6, 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.5), -1.8em -1.8em 0 0em rgba(0,162,187, 0.7)}
+  12.5% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.7), 1.8em -1.8em 0 0em #7ae6e6, 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.5)}
+  25% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.5), 1.8em -1.8em 0 0em rgba(0,162,187, 0.7), 2.5em 0em 0 0em #7ae6e6, 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  37.5% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.5), 2.5em 0em 0 0em rgba(0,162,187, 0.7), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  50% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.5), 1.75em 1.75em 0 0em rgba(0,162,187, 0.7), 0em 2.5em 0 0em #7ae6e6, -1.8em 1.8em 0 0em rgba(0,162,187, 0.3), -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  62.5% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.5), 0em 2.5em 0 0em rgba(0,162,187, 0.7), -1.8em 1.8em 0 0em #7ae6e6, -2.6em 0em 0 0em rgba(0,162,187, 0.3), -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  75% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.5), -1.8em 1.8em 0 0em rgba(0,162,187, 0.7), -2.6em 0em 0 0em #7ae6e6, -1.8em -1.8em 0 0em rgba(0,162,187, 0.3)}
+  87.5% {box-shadow:0em -2.6em 0em 0em rgba(0,162,187, 0.3), 1.8em -1.8em 0 0em rgba(0,162,187, 0.3), 2.5em 0em 0 0em rgba(0,162,187, 0.3), 1.75em 1.75em 0 0em rgba(0,162,187, 0.3), 0em 2.5em 0 0em rgba(0,162,187, 0.3), -1.8em 1.8em 0 0em rgba(0,162,187, 0.5), -2.6em 0em 0 0em rgba(0,162,187, 0.7), -1.8em -1.8em 0 0em}
+}
+@media screen and (max-width:600px) {
+	.loaderbox {zoom:0.5}
 }
